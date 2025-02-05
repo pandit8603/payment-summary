@@ -73,21 +73,21 @@ function App() {
                 Pay Now
               </button>
             )}
-
+         {/* if user click on pay Now button then animated spinner will visible */}
             {paymentStatus === 'processing' && (
               <div className="processing">
                 <Loader2 className="spinner" />
                 <p className="processing-message">Payment-in-progress. Please do not close this window</p>
               </div>
             )}
-
+{/* if payment get success then this message will displayed  with one check circle*/}
             {paymentStatus === 'success' && (
               <div className="processing">
                 <CheckCircle2 className="status-icon success-icon" />
                 <p className="status-message success-message">Payment Successful!</p>
               </div>
             )}
-
+{ /* if payment failed then this part will executed  */}
             {paymentStatus === 'failed' && (
               <div className="processing">
                 <XCircle className="status-icon error-icon" />
