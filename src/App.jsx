@@ -1,32 +1,32 @@
-import  { useState } from 'react';
-import {  Phone, Mail, Loader2, CheckCircle2, XCircle } from 'lucide-react';
-import logo from './assets/download1.jpeg'
-import './App.css'
+import { useState } from "react";
+import { Phone, Mail, Loader2, CheckCircle2, XCircle } from "lucide-react";
+import logo from "./assets/download1.jpeg";
+import "./App.css";
 
 const PRODUCT = {
   name: "Enterprise API License",
   quantity: 1,
-  pricePerUnit: 999.00
+  pricePerUnit: 999.0,
 };
 
 function App() {
-  const [paymentStatus, setPaymentStatus] = useState('idle');
-  
+  const [paymentStatus, setPaymentStatus] = useState("idle");
+
   const subtotal = PRODUCT.quantity * PRODUCT.pricePerUnit;
   const gst = subtotal * 0.18;
   const total = subtotal + gst;
 
   const handlePayment = () => {
-    setPaymentStatus('processing');
-    
+    setPaymentStatus("processing");
+
     setTimeout(() => {
-      setPaymentStatus(Math.random() > 0.5 ? 'success' : 'failed');
+      setPaymentStatus(Math.random() > 0.5 ? "success" : "failed");
     }, 10000);
   };
 
   return (
     <div className="container">
-       {/* Header */}
+      {/* Header */}
       <header className="header">
         <div className="header-content">
           <div className="brand">
@@ -35,11 +35,11 @@ function App() {
           </div>
         </div>
       </header>
-   {/* main sectin */}
+      {/* main sectin */}
       <main className="main">
         <div className="card">
           <h2 className="card-title">Payment Summary</h2>
-      {/* Payment Details */}     
+          {/* Payment Details */}
           <div className="payment-details">
             <div className="detail-row">
               <span className="detail-label">Product</span>
@@ -51,7 +51,9 @@ function App() {
             </div>
             <div className="detail-row">
               <span className="detail-label">Price per unit</span>
-              <span className="detail-value">₹{PRODUCT.pricePerUnit.toFixed(2)}</span>
+              <span className="detail-value">
+                ₹{PRODUCT.pricePerUnit.toFixed(2)}
+              </span>
             </div>
             <div className="detail-row">
               <span className="detail-label">Subtotal</span>
@@ -66,33 +68,40 @@ function App() {
               <span>₹{total.toFixed(2)}</span>
             </div>
           </div>
-      {/* Payment Action */}
+          {/* Payment Action */}
           <div className="payment-actions">
-            {paymentStatus === 'idle' && (
+            {paymentStatus === "idle" && (
               <button onClick={handlePayment} className="pay-button">
                 Pay Now
               </button>
             )}
-         {/* if user click on pay Now button then animated spinner will visible */}
-            {paymentStatus === 'processing' && (
+            {/* if user click on pay Now button then animated spinner will visible */}
+            {paymentStatus === "processing" && (
               <div className="processing">
                 <Loader2 className="spinner" />
-                <p className="processing-message">Payment-in-progress. Please do not close this window</p>
+                <p className="processing-message">
+                  Payment-in-progress. Please do not close this window
+                </p>
               </div>
             )}
-{/* if payment get success then this message will displayed  with one check circle*/}
-            {paymentStatus === 'success' && (
+            {/* if payment get success then this message will displayed  with one check circle*/}
+            {paymentStatus === "success" && (
               <div className="processing">
                 <CheckCircle2 className="status-icon success-icon" />
-                <p className="status-message success-message">Payment Successful!</p>
+                <p className="status-message success-message">
+                  Payment Successful!
+                </p>
               </div>
             )}
-{ /* if payment failed then this part will executed  */}
-            {paymentStatus === 'failed' && (
+            {/* if payment failed then this part will executed  */}
+            {paymentStatus === "failed" && (
               <div className="processing">
                 <XCircle className="status-icon error-icon" />
                 <p className="status-message error-message">Payment Failed</p>
-                <button onClick={() => setPaymentStatus('idle')} className="retry-button">
+                <button
+                  onClick={() => setPaymentStatus("idle")}
+                  className="retry-button"
+                >
                   Try Again
                 </button>
               </div>
@@ -100,7 +109,7 @@ function App() {
           </div>
         </div>
       </main>
-    {/* footer section */}
+      {/* footer section */}
       <footer className="footer">
         <div className="footer-content">
           <h3 className="footer-title">Contact Support</h3>
@@ -124,8 +133,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
