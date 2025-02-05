@@ -1,0 +1,288 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  background-color: rgba(255, 250, 250, 0.682);
+}
+
+/* Layout */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: rgba(32, 29, 29, 0.834);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  height: 75px;
+}
+
+.header-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  
+}
+
+.brand-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  align-items: start;
+  
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  max-width: 56rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+}
+
+/* Payment Details */
+.payment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.detail-label {
+  color: var(--gray-600);
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+.total-row {
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+/* Payment Actions */
+.payment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(120, 120, 245, 0.851);
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pay-button:hover {
+  background-color: blue;
+}
+
+.processing {
+  text-align: center;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  color:  rgb(28, 188, 28);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.processing-message {
+  margin-top: 0.75rem;
+  color: black;
+}
+
+.status-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+}
+
+.success-icon {
+  color: rgb(28, 188, 28);
+}
+
+.error-icon {
+  color: red;
+}
+
+.status-message {
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.success-message {
+  color: rgb(28, 188, 28);
+}
+
+.error-message {
+  color: red;
+}
+
+.retry-button {
+  width: 120px;
+  padding: .75rem 1rem;
+  background-color: rgba(240, 4, 4, 0.851);
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+/* Footer */
+.footer {
+  background-color: gray;
+  color: rgba(229, 223, 223, 0.962);
+  padding: 2rem 1rem;
+}
+
+.footer-content {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .pay-button {
+    padding: 1rem 0;
+  }
+
+  .footer-content {
+    padding: 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .contact-item {
+    gap: 0.5rem;
+  }
+}
+
+/* Responsive for very small screens (mobile) */
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  .contact-item {
+    font-size: 0.875rem;
+  }
+}
