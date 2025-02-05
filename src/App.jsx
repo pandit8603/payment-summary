@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className="container">
+       {/* Header */}
       <header className="header">
         <div className="header-content">
           <div className="brand">
@@ -34,11 +35,11 @@ function App() {
           </div>
         </div>
       </header>
-
+   {/* main sectin */}
       <main className="main">
         <div className="card">
           <h2 className="card-title">Payment Summary</h2>
-          
+      {/* Payment Details */}     
           <div className="payment-details">
             <div className="detail-row">
               <span className="detail-label">Product</span>
@@ -65,7 +66,7 @@ function App() {
               <span>₹{total.toFixed(2)}</span>
             </div>
           </div>
-
+      {/* Payment Action */}
           <div className="payment-actions">
             {paymentStatus === 'idle' && (
               <button onClick={handlePayment} className="pay-button">
@@ -99,7 +100,7 @@ function App() {
           </div>
         </div>
       </main>
-
+    {/* footer section */}
       <footer className="footer">
         <div className="footer-content">
           <h3 className="footer-title">Contact Support</h3>
